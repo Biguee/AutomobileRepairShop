@@ -1,15 +1,22 @@
 package pl.com.garage.works.hard.dao;
 
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import pl.com.garage.works.hard.model.Employee;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 /**
  * Created by 8760w on 2017-07-04.
  */
 @Repository
-public class EmployeeDaoImpl implements EmployeeDao {
+public class EmployeeDaoImpl extends AbstractDaoImpl<Employee> implements EmployeeDao {
+
+
+    public EmployeeDaoImpl(EntityManager entityManager) {
+        super(entityManager, Employee.class);
+    }
 
     private List<Employee> employeeList;
 
@@ -34,8 +41,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public Employee findBySurname(String surname) {
         //for (int i = 0; i < employeeList.size(); i++) {
 
-
+        return null;
         }
 
     }
-}
+

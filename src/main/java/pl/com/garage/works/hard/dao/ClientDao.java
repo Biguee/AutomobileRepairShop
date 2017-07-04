@@ -7,9 +7,9 @@ import pl.com.garage.works.hard.model.Client;
 /**
  * Created by 8760w on 2017-07-04.
  */
-
-public interface ClientDao {
+public interface ClientDao extends AbstractDao<Client>{
 
 
 
 }
+

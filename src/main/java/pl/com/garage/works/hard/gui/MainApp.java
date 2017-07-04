@@ -10,6 +10,9 @@ import pl.com.garage.works.hard.service.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * Created by 8760w on 2017-07-04.
@@ -20,12 +23,20 @@ public class MainApp {
 
         AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
 
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnitName");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+
+
 
         ClientService clientService = applicationContext.getBean(ClientService.class);
         EmployeeService employeeService = applicationContext.getBean(EmployeeService.class);
         OrderService orderService = applicationContext.getBean(OrderService.class);
         RepairService repairService = applicationContext.getBean(RepairService.class);
         StockService stockService = applicationContext.getBean(StockService.class);
+
+        entityManager.close();
+        entityManagerFactory.close();
 
         applicationContext.close();
 

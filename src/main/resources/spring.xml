@@ -38,8 +38,12 @@
     </bean>
 
 
-    <bean id="personDAO" class="com.journaldev.dao.PersonDAOImpl">
-        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    <!--<bean id="personDAO" class="com.journaldev.dao.PersonDAOImpl">-->
+        <!--<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />-->
+    <!--</bean>-->
+
+    <bean id="myEmf" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="myPersistenceUnit"/>
     </bean>
 
 </beans>
