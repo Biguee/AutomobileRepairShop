@@ -33,9 +33,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public Employee findBySurname(String surname) {
         //for (int i = 0; i < employeeList.size(); i++) {
-
+        return null;
 
         }
 
     }
-}
+

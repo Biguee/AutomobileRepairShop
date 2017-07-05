@@ -73,7 +73,7 @@ public class EmployeeServiceTest {
         //when
         Employee employee = employeeService.findBySurname("Siekawa");
         //then
-        assertEquals();
+        //assertEquals();
 
     }
 
