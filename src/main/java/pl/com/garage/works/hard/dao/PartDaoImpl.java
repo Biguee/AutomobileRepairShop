@@ -33,17 +33,22 @@ public class PartDaoImpl implements PartDao {
     }
 
     @Override
-    public Part findPartByPartNumber(String partNumber) {
-        return sessionFactory.getCurrentSession().find(Part.class, partNumber);
+    public Part findPartById(Integer id) {
+        return sessionFactory.getCurrentSession().load(Part.class, id);
     }
 
     @Override
-    public void updatePart(Part part) {
-        sessionFactory.getCurrentSession().update(part);
+    public void updatePart(String partNumber, Part part) {
+        part.setPartNumber(partNumber);
+        sessionFactory.getCurrentSession().update(partNumber, part);
     }
 
     @Override
-    public void deletePart(Part part) {
+    public void deletePart(Integer id, Part part) {
+        //TODO
+        //sessionFactory.getCurrentSession().get(Part.class, id);
+        id = part.getId();
+        sessionFactory.getCurrentSession().load(Part.class, id);
         sessionFactory.getCurrentSession().delete(part);
     }
 

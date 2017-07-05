@@ -15,11 +15,11 @@ public interface PartDao {
     //create
     void savePart(Part part);
     //read
-    Part findPartByPartNumber(String partNumber);
+    Part findPartById(Integer id);
     //update
-    void updatePart(Part part);
+    void updatePart(String partNumber, Part part);
     //delete
-    void deletePart(Part part);
+    void deletePart(Integer id, Part part);
     //list
     List<Part> findAllParts();
 

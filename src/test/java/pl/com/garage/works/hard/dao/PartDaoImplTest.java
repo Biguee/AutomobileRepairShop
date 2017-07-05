@@ -10,9 +10,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pl.com.garage.works.hard.model.Part;
-import pl.com.garage.works.hard.service.PartService;
 
-import static org.junit.Assert.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by 8760w on 2017-07-05.
@@ -22,7 +23,7 @@ import static org.junit.Assert.*;
 public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Autowired
-    private PartService partService;
+    private PartDao partDao;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -30,17 +31,17 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     @Before
     public void before(){
         jdbcTemplate.execute("truncate parts");
-        //Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
-        //Part part2 = new Part("toyota celica uszczelniacz wału korbowego", "586668EL", 29.57, 12.00);
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
+        Part part2 = new Part("toyota celica uszczelniacz wału korbowego", "586668EL", 29.57, 12.00);
         //Part part3 = new Part("toyota celica zestaw sprzęgła", "3000771001SAC", 437.95, 215.00);
     }
 
     @Test
-    public void savePart() throws Exception {
+    public void shouldSavePart() throws Exception {
         //given
 
         //when
-        partService.savePart(new Part("toyota celica zestaw sprzęgła", "3000771001SAC", 437.95, 215.00));
+        partDao.savePart(new Part("toyota celica zestaw sprzęgła", "3000771001SAC", 437.95, 215.00));
         //then
         int countParts = jdbcTemplate.queryForObject("select count(*) from parts where part_number=?", Integer.class, "3000771001SAC");
 
@@ -48,19 +49,55 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-    public void findPartByPartNumber() throws Exception {
+    public void shouldfindPartById() throws Exception {
+        //given
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
+        partDao.savePart(part1);
+        Integer id = jdbcTemplate.queryForObject("Select max(id) from parts", Integer.class);
+        //when
+        Part outputPart = partDao.findPartById(id);
+        //then
+        Assertions.assertThat(outputPart.getId()).isEqualTo(part1.getId());
     }
 
     @Test
-    public void updatePart() throws Exception {
+    public void SouldUpdatePart() throws Exception {
+        //given
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
+        partDao.savePart(part1);
+        String no = "pp989";
+        //when
+        partDao.updatePart(no, part1);
+
+        //then
+        Assertions.assertThat(part1.getPartNumber()).isEqualTo(no);
     }
 
     @Test
-    public void deletePart() throws Exception {
+    public void shouldDeletePart() throws Exception {
+        //given
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
+        partDao.savePart(part1);
+        Integer id = jdbcTemplate.queryForObject("Select max(id) from parts", Integer.class);
+        //when
+        partDao.deletePart(id, part1);
+        //then
+        Assertions.assertThat(part1.getId()).isEqualTo(null);
     }
 
     @Test
     public void findAllParts() throws Exception {
+        //given
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
+        partDao.savePart(part1);
+        Part part2 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
+        partDao.savePart(part2);
+        List<Part> lista = Arrays.asList(part1, part2);
+
+        //when
+        List<Part> outputParts = partDao.findAllParts();
+        //then
+        Assertions.assertThat(lista.size()).isEqualTo(outputParts.size());
     }
 
 }
