@@ -17,7 +17,14 @@ CREATE TABLE parts(
   price_retail FLOAT
 );
 
+DROP TABLE IF EXISTS repairs;
 
+CREATE TABLE repairs(
+  ID BIGSERIAL NOT NULL ,
+  repair_name TEXT NOT NULL,
+  repair_cost FLOAT,
+  repair_Time TIMESTAMP
+)
 
 
 

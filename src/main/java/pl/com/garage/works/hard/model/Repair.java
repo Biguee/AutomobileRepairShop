@@ -1,14 +1,28 @@
 package pl.com.garage.works.hard.model;
 
+import org.omg.CORBA.portable.IDLEntity;
+
+import javax.persistence.*;
 import java.util.Date;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 /**
  * Created by 8760w on 2017-07-04.
  */
+@Entity
+@Table(name = "repairs")
 public class Repair {
 
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    private Integer id;
+    @Column(name = "repair_name")
     private String repairName;
+    @Column(name = "repair_cost")
     private double repairCost;
+    @Column(name = "repair_time")
     private Date repairTime;
 
     public Repair(String repairName, double repairCost, Date repairTime) {
@@ -17,35 +31,48 @@ public class Repair {
         this.repairTime = repairTime;
     }
 
+    public Repair() {
+    }
+
     @Override
     public String toString() {
         return "Repair{" +
-                "repairName='" + repairName + '\'' +
+                "id=" + id +
+                ", repairName='" + repairName + '\'' +
                 ", repairCost=" + repairCost +
                 ", repairTime=" + repairTime +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Repair repair = (Repair) o;
-
-        if (Double.compare(repair.repairCost, repairCost) != 0) return false;
-        if (repairName != null ? !repairName.equals(repair.repairName) : repair.repairName != null) return false;
-        return repairTime != null ? repairTime.equals(repair.repairTime) : repair.repairTime == null;
+    public Integer getId() {
+        return id;
     }
 
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = repairName != null ? repairName.hashCode() : 0;
-        temp = Double.doubleToLongBits(repairCost);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (repairTime != null ? repairTime.hashCode() : 0);
-        return result;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getRepairName() {
+        return repairName;
+    }
+
+    public void setRepairName(String repairName) {
+        this.repairName = repairName;
+    }
+
+    public double getRepairCost() {
+        return repairCost;
+    }
+
+    public void setRepairCost(double repairCost) {
+        this.repairCost = repairCost;
+    }
+
+    public Date getRepairTime() {
+        return repairTime;
+    }
+
+    public void setRepairTime(Date repairTime) {
+        this.repairTime = repairTime;
     }
 }
