@@ -18,7 +18,7 @@ public class MainApp {
 
     public static void main(String[] args) {
 
-        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
 
 
         ClientService clientService = applicationContext.getBean(ClientService.class);
@@ -28,11 +28,6 @@ public class MainApp {
         StockService stockService = applicationContext.getBean(StockService.class);
 
         applicationContext.close();
-
-
-
-
-
 
 
 //        //ProductService productService = new ProductService();

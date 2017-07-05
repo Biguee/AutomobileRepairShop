@@ -10,38 +10,18 @@
     <context:component-scan base-package="pl.com.garage.works.hard"/>
 
 
-    <!--<import resource="classpath:dao.xml"/>-->
+    <!--to samo co 1-->
+    <!--<context:property-placeholder location="classpath:params.properties" file-encoding="windows-1250" ignore-unresolvable="true"/>-->
 
-    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"-->
-          <!--destroy-method="close">-->
-        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
-        <!--<property name="url" value="jdbc:mysql://localhost:3306/TestDB" />-->
-        <!--<property name="username" value="pankaj" />-->
-        <!--<property name="password" value="pankaj123" />-->
-    <!--</bean>-->
+    <import resource="classpath:dao.xml"/>
 
 
-    <!-- Hibernate 4 SessionFactory Bean definition -->
-    <!--<bean id="hibernate4AnnotatedSessionFactory"-->
-          <!--class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
-        <!--<property name="dataSource" ref="dataSource" />-->
-        <!--<property name="annotatedClasses">-->
-            <!--<list>-->
-                <!--<value>com.journaldev.model.Person</value>-->
-            <!--</list>-->
-        <!--</property>-->
-        <!--<property name="hibernateProperties">-->
-            <!--<props>-->
-                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
-                <!--<prop key="hibernate.current_session_context_class">thread</prop>-->
-                <!--<prop key="hibernate.show_sql">false</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <!--<bean id="productService" class="pl.com.sages.spring.bootcamp.service.ProductService"/>-->
+    <!--<bean id="paymentService" class="pl.com.sages.spring.bootcamp.service.PaymentService" />-->
+    <!--<bean id="cartService" class="pl.com.sages.spring.bootcamp.service.CartService"/>-->
 
-
-    <!--<bean id="personDAO" class="com.journaldev.dao.PersonDAOImpl">-->
-        <!--<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />-->
+    <!--<bean id="applicationService" class="pl.com.sages.spring.bootcamp.service.ApplicationService" init-method="afterCreate" destroy-method="beforeDestroy" scope="prototype">-->
+        <!--<property name="applicationName" value="${kodolamacz.app.name}"/>-->
     <!--</bean>-->
 
 </beans>

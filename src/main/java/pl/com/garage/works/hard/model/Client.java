@@ -5,11 +5,13 @@ package pl.com.garage.works.hard.model;
  */
 public class Client {
 
+    private int id;
     private String clientName;
     private String clientSurname;
     private String clientNIP;
 
-    public Client(String clientName, String clientSurname, String clientNIP) {
+    public Client(int id, String clientName, String clientSurname, String clientNIP) {
+        this.id = id;
         this.clientName = clientName;
         this.clientSurname = clientSurname;
         this.clientNIP = clientNIP;
@@ -43,5 +45,29 @@ public class Client {
         result = 31 * result + (clientSurname != null ? clientSurname.hashCode() : 0);
         result = 31 * result + (clientNIP != null ? clientNIP.hashCode() : 0);
         return result;
+    }
+
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    public String getClientSurname() {
+        return clientSurname;
+    }
+
+    public void setClientSurname(String clientSurname) {
+        this.clientSurname = clientSurname;
+    }
+
+    public String getClientNIP() {
+        return clientNIP;
+    }
+
+    public void setClientNIP(String clientNIP) {
+        this.clientNIP = clientNIP;
     }
 }
