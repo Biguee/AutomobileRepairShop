@@ -30,22 +30,6 @@ public class MainApp {
         applicationContext.close();
 
 
-//        //ProductService productService = new ProductService();
-//        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-//        //AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(Spring.class);
-//
-//        //ProductService productService = (ProductService) applicationContext.getBean("productService");
-//        //po nazwie:
-//        ApplicationService applicationService = applicationContext.getBean(ApplicationService.class);
-//        ApplicationService applicationService2 = applicationContext.getBean(ApplicationService.class);
-//        ApplicationService applicationService3 = applicationContext.getBean(ApplicationService.class);
-//
-//        applicationService.doShopping();
-//
-//        applicationContext.close();
-//
-//
-//
     }
 
 
