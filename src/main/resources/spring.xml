@@ -14,6 +14,8 @@
     <!--<context:property-placeholder location="classpath:params.properties" file-encoding="windows-1250" ignore-unresolvable="true"/>-->
 
     <import resource="classpath:dao.xml"/>
+    <import resource="classpath:hibernate.xml"/>
+
 
 
     <!--<bean id="productService" class="pl.com.sages.spring.bootcamp.service.ProductService"/>-->
