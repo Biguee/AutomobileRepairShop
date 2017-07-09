@@ -19,7 +19,7 @@ public interface PartDao {
     //update
     void updatePart(String partNumber, Part part);
     //delete
-    void deletePart(Integer id, Part part);
+    void deletePart(Part part);
     //list
     List<Part> findAllParts();
 

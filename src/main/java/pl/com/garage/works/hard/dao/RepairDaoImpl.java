@@ -44,7 +44,7 @@ public class RepairDaoImpl implements RepairDao {
     }
 
     @Override
-    public void deleteRepair(Integer id, Repair repair) {
+    public void deleteRepair(Repair repair) {
         //todo
     }
 

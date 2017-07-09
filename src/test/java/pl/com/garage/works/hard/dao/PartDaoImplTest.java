@@ -28,11 +28,12 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
+    Part part2 = new Part("toyota celica uszczelniacz wału korbowego", "586668EL", 29.57, 12.00);
+
     @Before
     public void before(){
         jdbcTemplate.execute("truncate parts");
-        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
-        Part part2 = new Part("toyota celica uszczelniacz wału korbowego", "586668EL", 29.57, 12.00);
         //Part part3 = new Part("toyota celica zestaw sprzęgła", "3000771001SAC", 437.95, 215.00);
     }
 
@@ -78,11 +79,11 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
         //given
         Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00);
         partDao.savePart(part1);
-        Integer id = jdbcTemplate.queryForObject("Select max(id) from parts", Integer.class);
+
         //when
-        partDao.deletePart(id, part1);
+        partDao.deletePart(part1);
         //then
-        Assertions.assertThat(part1.getId()).isEqualTo(null);
+        Assertions.assertThat(part1.getPartName()).isEqualTo(null);
     }
 
     @Test

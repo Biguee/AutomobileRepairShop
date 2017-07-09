@@ -44,12 +44,13 @@ public class PartDaoImpl implements PartDao {
     }
 
     @Override
-    public void deletePart(Integer id, Part part) {
-        //TODO
-        //sessionFactory.getCurrentSession().get(Part.class, id);
-        id = part.getId();
-        sessionFactory.getCurrentSession().load(Part.class, id);
+    public void deletePart(Part part) {
         sessionFactory.getCurrentSession().delete(part);
+        //TODO
+        // sessionFactory.getCurrentSession().get(Part.class, id);
+        //        id = part.getId();
+        //        sessionFactory.getCurrentSession().load(Part.class, id);
+        //        sessionFactory.getCurrentSession().delete(part);
     }
 
     @Override

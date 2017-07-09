@@ -10,16 +10,10 @@
     <context:component-scan base-package="pl.com.garage.works.hard.service"/>
 
 
-    <!--to samo co 1-->
-    <!--<context:property-placeholder location="classpath:params.properties" file-encoding="windows-1250" ignore-unresolvable="true"/>-->
-
     <import resource="classpath:dao.xml"/>
     <import resource="classpath:hibernate.xml"/>
 
 
 
-    <!--<bean id="applicationService" class="pl.com.sages.spring.bootcamp.service.ApplicationService" init-method="afterCreate" destroy-method="beforeDestroy" scope="prototype">-->
-        <!--<property name="applicationName" value="${kodolamacz.app.name}"/>-->
-    <!--</bean>-->
 
 </beans>

@@ -20,7 +20,7 @@ public interface RepairDao {
     //update
     void updateRepair(double repairCost, Repair repair);
     //delete
-    void deleteRepair(Integer id, Repair repair);
+    void deleteRepair(Repair repair);
     //list
     List<Repair> findAllRepair();
 

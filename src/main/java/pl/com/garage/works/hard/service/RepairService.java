@@ -29,8 +29,8 @@ public class RepairService {
         repairDao.updateRepair(repairCost, repair);
     }
     //delete
-    public void deleteRepair(Integer id, Repair repair){
-        repairDao.deleteRepair(id, repair);
+    public void deleteRepair(Repair repair){
+        repairDao.deleteRepair(repair);
     }
     //list
     public List<Repair> findAllRepair(){
