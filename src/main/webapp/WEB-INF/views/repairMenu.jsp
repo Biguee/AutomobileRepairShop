@@ -17,9 +17,9 @@
         </a>
     </li>
     <li>
-        <%--<a href="allClients.html">--%>
-            <%--bla bla bla--%>
-        <%--</a>--%>
+        <a href="allClients.html">
+            bla bla bla
+        </a>
     </li>
 </ul>
 <a href="/">

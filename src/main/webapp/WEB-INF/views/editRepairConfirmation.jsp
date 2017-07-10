@@ -10,15 +10,15 @@
 <h2>OK!</h2>
 
 <p>
-    Title: ${repair.repair_name}
-    Cost: ${repair.repair_cost}
-    Time: ${repair.repair_time}
+    Title: ${repair.repairName}
+    Cost: ${repair.repairCost}
+    Time: ${repair.repairTime}
 
 </p>
 
 <p>
     <a href="index.html">
-        Back to the main manu
+        Menu glowne
     </a>
 </p>
 

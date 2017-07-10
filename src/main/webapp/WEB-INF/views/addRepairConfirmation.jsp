@@ -9,7 +9,7 @@
 <body>
 <h1>OK!</h1>
 <p>
-Dodano nowa naprawe  "${repair.repair_name}"
+Dodano nowa naprawe  "${repair.repairName}"
 </p>
 
 <a href="index.html">Main menu</a>

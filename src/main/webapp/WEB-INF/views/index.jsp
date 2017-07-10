@@ -13,13 +13,18 @@
 <ul>
     <li>
         <a href="addRepair.html">
-            repairs - jeden
+            Hard Works - zlecenie naprawy
         </a>
     </li>
-    <li>
-        <%--<a href="repair.html">--%>
-            <%--repairs - dwa--%>
+    <%--<li>--%>
+        <%--<a href="/showRepairMenu.html">--%>
+            <%--repairs - menu--%>
         <%--</a>--%>
+    <%--</li>--%>
+    <li>
+        <a href="allRepairs.html">
+            Hard Works - lista zapisanych zlecen
+        </a>
     </li>
 </ul>
 </body>

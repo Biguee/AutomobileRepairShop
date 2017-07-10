@@ -8,35 +8,38 @@
 </head>
 
 <body>
-<h1>Edit repair</h1>
-<f:form method="post" modelAttribute="repair" action="repair.html">
-    <f:hidden path="id"/>
-    <p>
-        Name:<f:input path="repairName"/>
-    <p>
+<body>
+<h1>Edytuj zlecenie</h1>
+<f:form method="post" modelAttribute="repair">
+    <div>Zlecenie: </div>
+    <f:input path="repairName"/>
+    <p style="font-size:14px; color:deeppink; font-weight:bold; font-style:italic;">
         <f:errors path="repairName"/>
     </p>
-    </p>
-    <p>
-        Cost:<f:input path="repairCost"/>
-    <p>
+    <div>Koszt naprawy: </div>
+    <f:input path="repairCost"/>
+    <p style="font-size:14px; color:deeppink; font-weight:bold; font-style:italic;">
         <f:errors path="repairCost"/>
     </p>
-    </p>
-    <p>
-        Time:<f:input path="repairTime"/>
-    <p>
+
+    <div>Czas naprawy (w godzinach): </div>
+    <f:input path="repairTime"/>
+    <p style="font-size:14px; color:deeppink; font-weight:bold; font-style:italic;">
         <f:errors path="repairTime"/>
     </p>
+
+
+    <p>
+        <button type="submit">Zmien</button>
     </p>
-    <button type="submit">Edit</button>
 </f:form>
 
 <p>
-    <a href="index.html">
-        Back to the main page
+    <a href="/index.html">
+        Menu glowne
     </a>
 </p>
+</body>
 
 </body>
 </html>

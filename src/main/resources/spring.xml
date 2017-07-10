@@ -12,6 +12,7 @@
 
     <import resource="classpath:dao.xml"/>
     <import resource="classpath:hibernate.xml"/>
+    <import resource="classpath:mail.xml"/>
 
 
 
