@@ -37,14 +37,14 @@ public class RepairServiceTest  extends AbstractTransactionalJUnit4SpringContext
     @Before
     public void before(){
         jdbcTemplate.execute("truncate repairs");
-        repairService.saveRepair(new Repair("wymiana klocków przód", 100, Date.from(Instant.now())));
+        repairService.saveRepair(new Repair("wymiana klocków przód", 100, 5));
     }
 
 
     @Test
     public void shouldSaveRepair() throws Exception {
         //given
-        Repair repair1 = new Repair("wymiana filtru oleju + olej", 50, Date.from(Instant.now()));
+        Repair repair1 = new Repair("wymiana filtru oleju + olej", 50, 5);
         //when
         repairService.saveRepair(repair1);
         //then
@@ -66,7 +66,7 @@ public class RepairServiceTest  extends AbstractTransactionalJUnit4SpringContext
     public void updateRepair() throws Exception {
         //given
         double cost = 500.0;
-        Repair repair = new Repair("wymiana filtru oleju + olej", 50, Date.from(Instant.now()));
+        Repair repair = new Repair("wymiana filtru oleju + olej", 50, 5);
                 //jdbcTemplate.queryForObject("select * from repairs where repair_cost=?", Repair.class, 100);
         repairService.saveRepair(repair);
 

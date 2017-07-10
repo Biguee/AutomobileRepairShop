@@ -12,14 +12,14 @@
 <h1>ahoj</h1>
 <ul>
     <li>
-        <a href="show-allProducts.html">
+        <a href="addRepair.html">
             repairs - jeden
         </a>
     </li>
     <li>
-        <a href="product.html">
-            repairs - dwa
-        </a>
+        <%--<a href="repair.html">--%>
+            <%--repairs - dwa--%>
+        <%--</a>--%>
     </li>
 </ul>
 </body>

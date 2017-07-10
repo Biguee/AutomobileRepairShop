@@ -23,8 +23,10 @@ CREATE TABLE repairs(
   ID BIGSERIAL NOT NULL ,
   repair_name TEXT NOT NULL,
   repair_cost FLOAT,
-  repair_Time TIMESTAMP
-)
+  repair_Time INTEGER
+);
+
+INSERT INTO repairs (repair_name, repair_cost, repair_Time) VALUES ('hamulce', 100, 2);
 
 
 

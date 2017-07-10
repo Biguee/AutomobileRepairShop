@@ -3,7 +3,9 @@ package pl.com.garage.works.hard.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import pl.com.garage.works.hard.model.Part;
 import pl.com.garage.works.hard.model.Repair;
 
@@ -16,6 +18,7 @@ import java.util.List;
  * Created by 8760w on 2017-07-04.
  */
 @Repository
+@Transactional
 public class RepairDaoImpl implements RepairDao {
 
     @Autowired

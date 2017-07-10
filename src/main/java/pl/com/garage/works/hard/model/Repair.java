@@ -23,9 +23,9 @@ public class Repair {
     @Column(name = "repair_cost")
     private double repairCost;
     @Column(name = "repair_time")
-    private Date repairTime;
+    private Integer repairTime;
 
-    public Repair(String repairName, double repairCost, Date repairTime) {
+    public Repair(String repairName, double repairCost, Integer repairTime) {
         this.repairName = repairName;
         this.repairCost = repairCost;
         this.repairTime = repairTime;
@@ -68,11 +68,11 @@ public class Repair {
         this.repairCost = repairCost;
     }
 
-    public Date getRepairTime() {
+    public Integer getRepairTime() {
         return repairTime;
     }
 
-    public void setRepairTime(Date repairTime) {
+    public void setRepairTime(Integer repairTime) {
         this.repairTime = repairTime;
     }
 }

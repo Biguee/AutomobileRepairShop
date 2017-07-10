@@ -1,6 +1,7 @@
 package pl.com.garage.works.hard.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import javax.validation.Valid;
 /**
  * Created by 8760w on 2017-07-07.
  */
+@Controller
 public class RepairController {
 
     private RepairService repairService;
@@ -38,10 +40,10 @@ public class RepairController {
         return new ModelAndView("addRepairConfirmation");
     }
 
-    @RequestMapping(value = "show-allRepairs.html")
+    @RequestMapping(value = "allRepairs.html")
     public ModelAndView showAllRepairs(){
         return new ModelAndView(
-                "allRepair","repairList", repairService.findAllRepair());
+                "allRepairs","repairList", repairService.findAllRepair());
     }
 
     @RequestMapping(value = "removeRepair.html")

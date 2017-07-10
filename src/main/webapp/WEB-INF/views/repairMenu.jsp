@@ -13,17 +13,17 @@
 <ul>
     <li>
         <a href="addRepair.html">
-            Add new repair
+            dodaj nowa naprawe
         </a>
     </li>
     <li>
-        <a href="allRepairs.html">
-            Repairs list
-        </a>
+        <%--<a href="allClients.html">--%>
+            <%--bla bla bla--%>
+        <%--</a>--%>
     </li>
 </ul>
 <a href="/">
-    Main menu
+   main menu
 </a>
 </body>
 </html>

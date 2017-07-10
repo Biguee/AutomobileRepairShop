@@ -10,6 +10,7 @@
 
     <import resource="classpath:spring.xml"/>
     <context:component-scan base-package="pl.com.garage.works.hard.controller"/>
+    <context:component-scan base-package="pl.com.garage.works.hard.rest"/>
 
     <mvc:annotation-driven/>
 

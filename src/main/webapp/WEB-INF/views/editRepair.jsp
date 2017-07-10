@@ -12,21 +12,21 @@
 <f:form method="post" modelAttribute="repair" action="repair.html">
     <f:hidden path="id"/>
     <p>
-        Name:<f:input path="repair_name"/>
+        Name:<f:input path="repairName"/>
     <p>
-        <f:errors path="repair_name"/>
+        <f:errors path="repairName"/>
     </p>
     </p>
     <p>
-        Cost:<f:input path="repair_cost"/>
+        Cost:<f:input path="repairCost"/>
     <p>
-        <f:errors path="repair_cost"/>
+        <f:errors path="repairCost"/>
     </p>
     </p>
     <p>
-        Time:<f:input path="repair_time"/>
+        Time:<f:input path="repairTime"/>
     <p>
-        <f:errors path="repair_time"/>
+        <f:errors path="repairTime"/>
     </p>
     </p>
     <button type="submit">Edit</button>
