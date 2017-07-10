@@ -7,24 +7,24 @@
 </head>
 
 <body>
-<h1>add new repair</h1>
-<f:form method="post" modelAttribute="repair">
+<h1>dodaj nowego pracownika</h1>
+<f:form method="post" modelAttribute="employee">
     <p>
-        Nazwa: <f:input path="repairName"/>
+        Imie: <f:input path="employeeName"/>
     <p>
-        <f:errors path="repairName"/>
+        <f:errors path="employeeName"/>
     </p>
     </p>
     <p>
-        Cost:<f:input path="repairCost"/>
+        Nazwisko:<f:input path="employeeSurname"/>
     <p>
-        <f:errors path="repairCost"/>
+        <f:errors path="employeeSurname"/>
     </p>
     </p>
     <p>
-        Time:<f:input path="repairTime"/>
+        Pensja:<f:input path="salary"/>
     <p>
-        <f:errors path="repairTime"/>
+        <f:errors path="salary"/>
     </p>
     </p>
     <button type="submit">Dodaj</button>
@@ -32,13 +32,14 @@
 </f:form>
 <p>
     <a href="index.html">
-        menu glowne
+        Menu glowne
     </a>
 </p>
 <p>
-    <a href="showRepairMenu.html">
+    <a href="showEmployeeMenu.html">
         menu - pracownicy
     </a>
 </p>
+
 </body>
 </html>

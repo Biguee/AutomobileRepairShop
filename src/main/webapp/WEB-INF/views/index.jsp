@@ -9,23 +9,27 @@
 
 </head>
 <body>
-<h1>ahoj</h1>
+<h1>HARD WORKS GARAGE</h1>
 <ul>
     <li>
-        <a href="addRepair.html">
+        <a href="showRepairMenu.html">
             Hard Works - zlecenie naprawy
         </a>
     </li>
-    <%--<li>--%>
-        <%--<a href="/showRepairMenu.html">--%>
-            <%--repairs - menu--%>
-        <%--</a>--%>
-    <%--</li>--%>
+
     <li>
-        <a href="allRepairs.html">
-            Hard Works - lista zapisanych zlecen
+        <a href="showClientMenu.html">
+            Hard Works - klienci
         </a>
     </li>
+
+
+    <li>
+        <a href="showEmployeeMenu.html">
+            Hard Works - pracownicy
+        </a>
+    </li>
+
 </ul>
 </body>
 </html>

@@ -20,6 +20,8 @@ public class ClientService {
         clientDao.addClient(name, surname, NIP);
     }
 
+    public void saveClient(Client client) { clientDao.saveClient(client);}
+
     public Client findClientbyId(int id){
         return clientDao.findClientbyId(id);
     }

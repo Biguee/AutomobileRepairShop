@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import pl.com.garage.works.hard.model.Client;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by 8760w on 2017-07-04.
  */
 @Repository
+@Transactional
 public class ClientDaoImpl implements ClientDao {
 
     @Autowired
@@ -30,6 +32,11 @@ public class ClientDaoImpl implements ClientDao {
     @Override
     public void addClient(String name, String surname, String NIP) {
         jdbcTemplate.update("insert into CLIENTS (name, surname, NIP) values (?,?,?)", name, surname, NIP);
+    }
+
+    @Override
+    public void saveClient(Client client) {
+        jdbcTemplate.update("insert into CLIENTS (name, surname, NIP) values (?,?,?)", client.getClientName(), client.getClientSurname(), client.getClientNIP());
     }
 
     @Override

@@ -35,8 +35,13 @@
 </f:form>
 
 <p>
-    <a href="/index.html">
-        Menu glowne
+    <a href="index.html">
+        Back to the main page
+    </a>
+</p>
+<p>
+    <a href="showRepairMenu.html">
+        menu - pracownicy
     </a>
 </p>
 </body>

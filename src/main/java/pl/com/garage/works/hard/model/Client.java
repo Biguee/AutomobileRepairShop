@@ -1,13 +1,25 @@
 package pl.com.garage.works.hard.model;
 
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.IDENTITY;
+
 /**
  * Created by 8760w on 2017-07-04.
  */
+//@Entity
+//@Table(name = "clients")
 public class Client {
 
+    //@Id
+    //@GeneratedValue(strategy = IDENTITY)
+    //@Column(name = "id", unique = true, nullable = false)
     private int id;
+    //@Column(name = "client_name")
     private String clientName;
+    //@Column(name = "client_surname")
     private String clientSurname;
+    //@Column(name = "client_NIP")
     private String clientNIP;
 
     public Client(int id, String clientName, String clientSurname, String clientNIP) {
@@ -15,6 +27,9 @@ public class Client {
         this.clientName = clientName;
         this.clientSurname = clientSurname;
         this.clientNIP = clientNIP;
+    }
+
+    public Client() {
     }
 
     @Override
@@ -69,5 +84,13 @@ public class Client {
 
     public void setClientNIP(String clientNIP) {
         this.clientNIP = clientNIP;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

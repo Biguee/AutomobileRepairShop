@@ -3,7 +3,7 @@
 <%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>Lista zlecen</title>
+    <title>Lista pracownikow</title>
 </head>
 
 <body>
@@ -13,20 +13,20 @@
         <th>Lp.</th>
         <th>Id</th>
         <th>Name</th>
-        <th>Repair cost</th>
-        <th>Repair time</th>
+        <th>Surname</th>
+        <th>pensja</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${repairList}" var="repair" varStatus="status">
+    <c:forEach items="${employeeList}" var="employee" varStatus="status">
         <tr>
             <td>${status.index + 1}</td>
-            <td>${repair.id}</td>
-            <td>${repair.repairName}</td>
-            <td>${repair.repairCost}</td>
-            <td>${repair.repairTime}</td>
-            <td><a href="editRepair.html?id=${repair.id}">Edit</a></td>
-            <td><a href="removeRepair.html?id=${repair.id}">Remove</a></td>
+            <td>${employee.id}</td>
+            <td>${employee.employeeName}</td>
+            <td>${employee.employeeSurname}</td>
+            <td>${employee.salary}</td>
+            <td><a href="editEmployee.html?id=${employee.id}">Edytuj</a></td>
+            <td><a href="removeEmployee.html?id=${employee.id}">Usun</a></td>
         </tr>
     </c:forEach>
     </tbody>
@@ -37,7 +37,7 @@
     </a>
 </p>
 <p>
-    <a href="showRepairMenu.html">
+    <a href="showEmployeeMenu.html">
         menu - pracownicy
     </a>
 </p>

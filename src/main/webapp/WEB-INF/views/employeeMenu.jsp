@@ -9,17 +9,17 @@
 
 </head>
 <body>
-<h1>Zlecenia naprawy</h1>
+<h1>Pracownicy</h1>
 <ul>
     <li>
-        <a href="addRepair.html">
-            Hard Works - dodaj zlecenie naprawy
+        <a href="addEmployee.html">
+            Dodaj nowego pracownika
         </a>
     </li>
 
     <li>
-        <a href="allRepairs.html">
-            Hard Works - lista zapisanych zlecen
+        <a href="allEmployee.html">
+            Lista pracownikow
         </a>
     </li>
 </ul>

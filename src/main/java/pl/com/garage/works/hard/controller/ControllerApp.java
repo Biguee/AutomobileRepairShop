@@ -11,8 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControllerApp {
 
     @RequestMapping("showRepairMenu.html")
-    public ModelAndView showEmployeeMenu(){
+    public ModelAndView showRepairMenu(){
         return new ModelAndView("repairMenu");
+    }
+
+    @RequestMapping("showClientMenu.html")
+    public ModelAndView showClientMenu(){
+        return new ModelAndView("clientMenu");
+    }
+
+    @RequestMapping("showEmployeeMenu.html")
+    public ModelAndView showEmployeeMenu(){
+        return new ModelAndView("employeeMenu");
     }
 
 

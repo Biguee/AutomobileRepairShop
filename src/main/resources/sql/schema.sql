@@ -28,5 +28,14 @@ CREATE TABLE repairs(
 
 INSERT INTO repairs (repair_name, repair_cost, repair_Time) VALUES ('hamulce', 100, 2);
 
+DROP TABLE IF EXISTS employees;
+
+CREATE TABLE employees(
+  ID BIGSERIAL NOT NULL ,
+  employee_name TEXT NOT NULL ,
+  employee_surname text NOT NULL ,
+  employee_salary FLOAT
+);
+
 
 

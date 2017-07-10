@@ -9,17 +9,17 @@
 
 </head>
 <body>
-<h1>Zlecenia naprawy</h1>
+<h1>Kontrahenci</h1>
 <ul>
     <li>
-        <a href="addRepair.html">
-            Hard Works - dodaj zlecenie naprawy
+        <a href="addClient.html">
+            Dodaj nowego kontrahenta
         </a>
     </li>
 
     <li>
-        <a href="allRepairs.html">
-            Hard Works - lista zapisanych zlecen
+        <a href="allClients.html">
+            Lista kontrahentow
         </a>
     </li>
 </ul>
@@ -28,5 +28,6 @@
         menu glowne
     </a>
 </p>
+
 </body>
 </html>

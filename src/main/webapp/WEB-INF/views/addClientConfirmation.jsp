@@ -3,29 +3,24 @@
 
 <html>
 <head>
-    <title>Repair edited</title>
+    <title>Kontrahent dodany</title>
 </head>
 
 <body>
-<h2>OK!</h2>
-
+<h1>OK!</h1>
 <p>
-    Title: ${repair.repairName}
-    Cost: ${repair.repairCost}
-    Time: ${repair.repairTime}
-
+    Dodano nowego kontrahenta:  "${client.clientName}"  "${client.clientSurname}"
 </p>
 
 <p>
     <a href="index.html">
-        Back to the main page
+        menu glowne
     </a>
 </p>
 <p>
-    <a href="showRepairMenu.html">
-        menu - pracownicy
+    <a href="showClientMenu.html">
+        menu - kontrahenci
     </a>
 </p>
-
 </body>
 </html>

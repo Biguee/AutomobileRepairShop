@@ -12,6 +12,15 @@
 Dodano nowa naprawe  "${repair.repairName}"
 </p>
 
-<a href="index.html">Main menu</a>
+<p>
+    <a href="index.html">
+        menu glowne
+    </a>
+</p>
+<p>
+    <a href="showRepairMenu.html">
+        menu - pracownicy
+    </a>
+</p>
 </body>
 </html>
