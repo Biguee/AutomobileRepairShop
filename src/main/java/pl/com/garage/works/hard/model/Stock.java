@@ -1,37 +1,79 @@
 package pl.com.garage.works.hard.model;
 
+import javax.persistence.*;
+import java.lang.annotation.Target;
 import java.util.List;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 /**
  * Created by 8760w on 2017-07-04.
  */
+@Entity
+@Table(name = "stock")
 public class Stock {
 
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    private Integer id;
+    @Column(name = "stock_name")
+    private String stockName;
+
+
+    @OneToMany(mappedBy = "stock",cascade = {CascadeType.ALL})
     private List<Part> partsList;
 
-    public Stock(List<Part> partsList) {
-        this.partsList = partsList;
+    @OneToMany(mappedBy = "stock",cascade = {CascadeType.ALL})
+    private List<Part> partsToOrderList;
+
+
+    public Stock(String stockName) {
+        this.stockName = stockName;
+    }
+
+    public Stock() {
     }
 
     @Override
     public String toString() {
         return "Stock{" +
-                "partsList=" + partsList +
+                "id=" + id +
+                ", stockName='" + stockName + '\'' +
+                ", partsList=" + partsList +
+                ", partsToOrderList=" + partsToOrderList +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Stock stock = (Stock) o;
-
-        return partsList != null ? partsList.equals(stock.partsList) : stock.partsList == null;
+    public Integer getId() {
+        return id;
     }
 
-    @Override
-    public int hashCode() {
-        return partsList != null ? partsList.hashCode() : 0;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getStockName() {
+        return stockName;
+    }
+
+    public void setStockName(String stockName) {
+        this.stockName = stockName;
+    }
+
+    public List<Part> getPartsList() {
+        return partsList;
+    }
+
+    public void setPartsList(List<Part> partsList) {
+        this.partsList = partsList;
+    }
+
+    public List<Part> getPartsToOrderList() {
+        return partsToOrderList;
+    }
+
+    public void setPartsToOrderList(List<Part> partsToOrderList) {
+        this.partsToOrderList = partsToOrderList;
     }
 }

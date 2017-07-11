@@ -37,5 +37,11 @@ CREATE TABLE employees(
   employee_salary FLOAT
 );
 
+DROP TABLE IF EXISTS stock;
+
+CREATE TABLE stock(
+  ID BIGSERIAL NOT NULL ,
+ stock_name TEXT
+);
 
 

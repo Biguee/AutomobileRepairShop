@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Repair edited</title>
+    <title>Naprawa zostala zmieniona</title>
 </head>
 
 <body>
@@ -18,12 +18,12 @@
 
 <p>
     <a href="index.html">
-        Back to the main page
+        Menu glowne
     </a>
 </p>
 <p>
     <a href="showRepairMenu.html">
-        menu - pracownicy
+        menu - naprawa
     </a>
 </p>
 

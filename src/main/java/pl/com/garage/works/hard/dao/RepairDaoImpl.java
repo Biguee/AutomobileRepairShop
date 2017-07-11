@@ -37,7 +37,10 @@ public class RepairDaoImpl implements RepairDao {
 
     @Override
     public Repair findRepairById(Integer id) {
-        return sessionFactory.getCurrentSession().load(Repair.class, id);
+        return sessionFactory.getCurrentSession().find(Repair.class, id);
+        //Repair load = sessionFactory.getCurrentSession().load(Repair.class, id);
+        //load.getRepairName();
+        //return load;
     }
 
     @Override

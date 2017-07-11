@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h1>add new repair</h1>
+<h1>Dodaj nowa naprawe</h1>
 <f:form method="post" modelAttribute="repair">
     <p>
         Nazwa: <f:input path="repairName"/>
@@ -37,7 +37,7 @@
 </p>
 <p>
     <a href="showRepairMenu.html">
-        menu - pracownicy
+        menu - naprawy
     </a>
 </p>
 </body>

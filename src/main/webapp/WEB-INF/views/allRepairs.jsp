@@ -3,7 +3,7 @@
 <%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>Lista zlecen</title>
+    <title>Lista napraw</title>
 </head>
 
 <body>
@@ -12,9 +12,9 @@
     <tr>
         <th>Lp.</th>
         <th>Id</th>
-        <th>Name</th>
-        <th>Repair cost</th>
-        <th>Repair time</th>
+        <th>Nazwa</th>
+        <th>Wycena</th>
+        <th>Orientacyjny czas naprawy</th>
     </tr>
     </thead>
     <tbody>
@@ -25,8 +25,8 @@
             <td>${repair.repairName}</td>
             <td>${repair.repairCost}</td>
             <td>${repair.repairTime}</td>
-            <td><a href="editRepair.html?id=${repair.id}">Edit</a></td>
-            <td><a href="removeRepair.html?id=${repair.id}">Remove</a></td>
+            <td><a href="editRepair.html?id=${repair.id}">Edytuj</a></td>
+            <td><a href="removeRepair.html?id=${repair.id}">Usun</a></td>
         </tr>
     </c:forEach>
     </tbody>
@@ -38,7 +38,7 @@
 </p>
 <p>
     <a href="showRepairMenu.html">
-        menu - pracownicy
+        menu - naprawy
     </a>
 </p>
 </body>

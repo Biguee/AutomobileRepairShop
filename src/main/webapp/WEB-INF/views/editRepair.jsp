@@ -9,22 +9,22 @@
 
 <body>
 <body>
-<h1>Edytuj zlecenie</h1>
+<h1>Edytuj naprawe</h1>
 <f:form method="post" modelAttribute="repair">
-    <div>Zlecenie: </div>
+    <div>Naprawa: </div>
     <f:input path="repairName"/>
-    <p style="font-size:14px; color:deeppink; font-weight:bold; font-style:italic;">
+    <p>
         <f:errors path="repairName"/>
     </p>
     <div>Koszt naprawy: </div>
     <f:input path="repairCost"/>
-    <p style="font-size:14px; color:deeppink; font-weight:bold; font-style:italic;">
+    <p>
         <f:errors path="repairCost"/>
     </p>
 
     <div>Czas naprawy (w godzinach): </div>
     <f:input path="repairTime"/>
-    <p style="font-size:14px; color:deeppink; font-weight:bold; font-style:italic;">
+    <p>
         <f:errors path="repairTime"/>
     </p>
 
@@ -36,12 +36,12 @@
 
 <p>
     <a href="index.html">
-        Back to the main page
+        menu glowne
     </a>
 </p>
 <p>
     <a href="showRepairMenu.html">
-        menu - pracownicy
+        menu - naprawa
     </a>
 </p>
 </body>

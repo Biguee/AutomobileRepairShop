@@ -24,6 +24,8 @@ public class Part {
     private double priceWholesale;
     @Column(name = "price_retail")
     private double priceRetail;
+    @ManyToOne
+    private Stock stock;
 
     public Part(String partName, String partNumber, double priceWholesale, double priceRetail) {
         this.partName = partName;

@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Repair added</title>
+    <title>Naprawa dodana</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@ Dodano nowa naprawe  "${repair.repairName}"
 </p>
 <p>
     <a href="showRepairMenu.html">
-        menu - pracownicy
+        menu - naprawy
     </a>
 </p>
 </body>

@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<h1>Zlecenia naprawy</h1>
+<h1>Naprawa</h1>
 <ul>
     <li>
         <a href="addRepair.html">
@@ -19,7 +19,7 @@
 
     <li>
         <a href="allRepairs.html">
-            Hard Works - lista zapisanych zlecen
+            Hard Works - lista zapisanych napraw
         </a>
     </li>
 </ul>
