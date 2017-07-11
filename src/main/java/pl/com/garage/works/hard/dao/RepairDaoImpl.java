@@ -48,7 +48,8 @@ public class RepairDaoImpl implements RepairDao {
 
     @Override
     public void deleteRepair(Repair repair) {
-        //todo
+        repair.getRepairName();
+        sessionFactory.getCurrentSession().delete(repair);
     }
 
     @Override

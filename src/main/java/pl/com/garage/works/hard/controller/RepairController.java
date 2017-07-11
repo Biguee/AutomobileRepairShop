@@ -28,43 +28,43 @@ public class RepairController {
 
     @RequestMapping(value = "addRepair.html",method = RequestMethod.GET)
     public ModelAndView showAddRepair(){
-        return new ModelAndView("addRepair","repair", new Repair());
+        return new ModelAndView("/repairView/addRepair","repair", new Repair());
     }
 
     @RequestMapping(value = "addRepair.html",method = RequestMethod.POST)
     public ModelAndView addRepair(@Valid Repair repair, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
-            return new ModelAndView("addRepair");
+            return new ModelAndView("/repairView/addRepair");
         }
         repairService.saveRepair(repair);
-        return new ModelAndView("addRepairConfirmation");
+        return new ModelAndView("/repairView/addRepairConfirmation");
     }
 
     @RequestMapping(value = "allRepairs.html")
     public ModelAndView showAllRepairs(){
         return new ModelAndView(
-                "allRepairs","repairList", repairService.findAllRepair());
+                "/repairView/allRepairs","repairList", repairService.findAllRepair());
     }
 
     @RequestMapping(value = "removeRepair.html")
     public ModelAndView removeRepair(@Valid Repair repair){
         repairService.deleteRepair(repair);
-        return new ModelAndView("removeConfirmation");
+        return new ModelAndView("/repairView/removeConfirmation");
     }
 
     @RequestMapping(value = "editRepair.html", method = RequestMethod.GET)
     public ModelAndView showEditRepair(@RequestParam int id){
         return new ModelAndView(
-                "editRepair","repair", repairService.findRepairById(id));
+                "/repairView/editRepair","repair", repairService.findRepairById(id));
     }
 
     @RequestMapping(value = "editRepair.html",method = RequestMethod.POST)
     public ModelAndView editRepair(@Valid Repair repair, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return new ModelAndView("editRepair");
+            return new ModelAndView("/repairView/editRepair");
         }
         repairService.updateRepair(repair.getRepairCost(), repair);
-        return new ModelAndView("editRepairConfirmation");
+        return new ModelAndView("/repairView/editRepairConfirmation");
     }
 
 

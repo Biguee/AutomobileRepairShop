@@ -12,17 +12,17 @@ public class ControllerApp {
 
     @RequestMapping("showRepairMenu.html")
     public ModelAndView showRepairMenu(){
-        return new ModelAndView("repairMenu");
+        return new ModelAndView("repairView/repairMenu");
     }
 
     @RequestMapping("showClientMenu.html")
     public ModelAndView showClientMenu(){
-        return new ModelAndView("clientMenu");
+        return new ModelAndView("clientView/clientMenu");
     }
 
     @RequestMapping("showEmployeeMenu.html")
     public ModelAndView showEmployeeMenu(){
-        return new ModelAndView("employeeMenu");
+        return new ModelAndView("employeeView/employeeMenu");
     }
 
 

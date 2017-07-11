@@ -31,66 +31,39 @@ public class EmployeeController {
 
     @RequestMapping(value = "addEmployee.html",method = RequestMethod.GET)
     public ModelAndView showAddEmployee(){
-        return new ModelAndView("addEmployee","employee", new Employee());
+        return new ModelAndView("/employeeView/addEmployee","employee", new Employee());
     }
 
     @RequestMapping(value = "addEmployee.html",method = RequestMethod.POST)
     public ModelAndView addEmployee(@Valid Employee employee, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
-            return new ModelAndView("addEmployee");
+            return new ModelAndView("/employeeView/addEmployee");
         }
         employeeService.saveEployee(employee);
-        return new ModelAndView("addEmployeeConfirmation");
+        return new ModelAndView("/employeeView/addEmployeeConfirmation");
     }
 
     @RequestMapping(value = "allEmployees.html")
     public ModelAndView showAllEmployees(){
         return new ModelAndView(
-                "allEmployees","employeeList", employeeService.findAllEmployee());
+                "/employeeView/allEmployees","employeeList", employeeService.findAllEmployee());
     }
 
     @RequestMapping(value = "editEmployee.html", method = RequestMethod.GET)
     public ModelAndView showEditEmployee(@RequestParam int id){
         return new ModelAndView(
-                "editEmployee","employee",employeeService.findEmployeeById(id));
+                "/employeeView/editEmployee","employee",employeeService.findEmployeeById(id));
 
     }
 
     @RequestMapping(value = "editEmployee.html",method = RequestMethod.POST)
     public ModelAndView editEmployee(@Valid Employee employee, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return new ModelAndView("editEmployee");
+            return new ModelAndView("/employeeView/editEmployee");
         }
         employeeService.updateEmployee(employee.getEmployeeName(), employee);
-        return new ModelAndView("editEmployeeConfirmation");
+        return new ModelAndView("/employeeView/editEmployeeConfirmation");
     }
 
 
-
-//
-//    @RequestMapping(value = "addEmployee.html",method = RequestMethod.GET)
-//    public ModelAndView showAddCEmployee(){
-//        return new ModelAndView("addEmployee","employee", new Employee());
-//    }
-//
-//    @RequestMapping(value = "addEmployee.html",method = RequestMethod.POST)
-//    public ModelAndView addEmployee(@Valid Employee employee, BindingResult bindingResult){
-//        if (bindingResult.hasErrors()){
-//            return new ModelAndView("addEmployee");
-//        }
-//        employeeService.saveEployee(employee);
-//        return new ModelAndView("addEmployeeConfirmation");
-//    }
-//
-//    @RequestMapping(value = "allEmployee.html")
-//    public ModelAndView showAllEmployee(){
-//        return new ModelAndView(
-//                "allEmployee","employeeList", employeeService.findAllEmployee());
-//    }
-//
-//    @RequestMapping(value = "editEmployee.html", method = RequestMethod.GET)
-//    public ModelAndView showEditEmployee(@RequestParam String surname){
-//        return new ModelAndView(
-//                "editEmployee","employee", employeeService.findBySurname(surname));
-//    }
 }

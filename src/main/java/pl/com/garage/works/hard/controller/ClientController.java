@@ -31,37 +31,37 @@ public class ClientController {
 
     @RequestMapping(value = "addClient.html",method = RequestMethod.GET)
     public ModelAndView showAddClient(){
-        return new ModelAndView("addClient","client", new Client());
+        return new ModelAndView("/clientView/addClient","client", new Client());
     }
 
     @RequestMapping(value = "addClient.html",method = RequestMethod.POST)
     public ModelAndView addClient(@Valid Client client, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
-            return new ModelAndView("addClient");
+            return new ModelAndView("/clientView/addClient");
         }
         clientService.saveClient(client);
-        return new ModelAndView("addClientConfirmation");
+        return new ModelAndView("/clientView/addClientConfirmation");
     }
 
     @RequestMapping(value = "allClients.html")
     public ModelAndView showAllClients(){
         return new ModelAndView(
-                "allClients","clientList", clientService.findAllClients());
+                "/clientView/allClients","clientList", clientService.findAllClients());
     }
 
     @RequestMapping(value = "editClient.html", method = RequestMethod.GET)
     public ModelAndView showEditClient(@RequestParam int id){
         return new ModelAndView(
-                "editClient","client", clientService.findClientById(id));
+                "/clientView/editClient","client", clientService.findClientById(id));
     }
 
     @RequestMapping(value = "editClient.html",method = RequestMethod.POST)
     public ModelAndView editClient(@Valid Client client, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return new ModelAndView("editClient");
+            return new ModelAndView("/clientView/editClient");
         }
         clientService.updateClient(client.getClientName(), client);
-        return new ModelAndView("editClientConfirmation");
+        return new ModelAndView("/clientView/editClientConfirmation");
     }
 
 
