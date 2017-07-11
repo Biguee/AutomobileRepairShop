@@ -13,14 +13,15 @@ public interface ClientDao {
 
 
     //create
-    void addClient(String name, String surname, String NIP);
+    //void addClient(String name, String surname, String NIP);
+
     void saveClient(Client client);
     //read
     Client findClientbyId(int id);
     //update
-    void updateClient(String surname, String nip);
+    void updateClient( String clientName, Client client);
     //delete
-    void deleteClientById(int id);
+    void deleteClient(Client client);
     //list
     List<Client> findAllClients();
 

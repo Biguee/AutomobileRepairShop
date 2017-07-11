@@ -7,19 +7,19 @@ import static javax.persistence.GenerationType.IDENTITY;
 /**
  * Created by 8760w on 2017-07-04.
  */
-//@Entity
-//@Table(name = "clients")
+@Entity
+@Table(name = "clients")
 public class Client {
 
-    //@Id
-    //@GeneratedValue(strategy = IDENTITY)
-    //@Column(name = "id", unique = true, nullable = false)
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
     private int id;
-    //@Column(name = "client_name")
+    @Column(name = "name")
     private String clientName;
-    //@Column(name = "client_surname")
+    @Column(name = "surname")
     private String clientSurname;
-    //@Column(name = "client_NIP")
+    @Column(name = "nip")
     private String clientNIP;
 
     public Client(int id, String clientName, String clientSurname, String clientNIP) {

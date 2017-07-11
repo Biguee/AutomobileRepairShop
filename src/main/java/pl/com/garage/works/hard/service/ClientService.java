@@ -3,7 +3,9 @@ package pl.com.garage.works.hard.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.com.garage.works.hard.dao.ClientDao;
+import pl.com.garage.works.hard.dao.RepairDao;
 import pl.com.garage.works.hard.model.Client;
+import pl.com.garage.works.hard.model.Repair;
 
 import java.util.List;
 
@@ -16,26 +18,23 @@ public class ClientService {
     @Autowired
     private ClientDao clientDao;
 
-    public void addClient(String name, String surname, String NIP){
-        clientDao.addClient(name, surname, NIP);
+    //create
+    public void saveClient(Client client){ clientDao.saveClient(client);
     }
-
-    public void saveClient(Client client) { clientDao.saveClient(client);}
-
-    public Client findClientbyId(int id){
+    //read
+    public Client findClientById(Integer id){
         return clientDao.findClientbyId(id);
     }
-
-    public void updateClient(String surname, String nip){
-         clientDao.updateClient(surname, nip);
+    //update
+    public void updateClient(String clientName, Client client){
+        clientDao.updateClient(clientName, client);
     }
-
-    public void deleteClientById(int id){
-        clientDao.deleteClientById(id);
+    //delete
+    public void deleteClient(Client client){
+        clientDao.deleteClient(client);
     }
-
+    //list
     public List<Client> findAllClients(){
         return clientDao.findAllClients();
     }
-
 }

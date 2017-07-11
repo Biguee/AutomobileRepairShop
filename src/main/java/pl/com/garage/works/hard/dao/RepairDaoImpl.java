@@ -24,7 +24,7 @@ public class RepairDaoImpl implements RepairDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    //be or not to be?
+
     public RepairDaoImpl(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
     }
@@ -38,9 +38,6 @@ public class RepairDaoImpl implements RepairDao {
     @Override
     public Repair findRepairById(Integer id) {
         return sessionFactory.getCurrentSession().find(Repair.class, id);
-        //Repair load = sessionFactory.getCurrentSession().load(Repair.class, id);
-        //load.getRepairName();
-        //return load;
     }
 
     @Override

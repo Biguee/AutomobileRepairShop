@@ -25,8 +25,8 @@
             <td>${client.clientName}</td>
             <td>${client.clientSurname}</td>
             <td>${client.clientNIP}</td>
-            <td><a href="editClient.html?id=${repair.id}">Edytuj</a></td>
-            <td><a href="removeClient.html?id=${repair.id}">Usun</a></td>
+            <td><a href="editClient.html?id=${client.id}">Edytuj</a></td>
+            <td><a href="removeClient.html?id=${client.id}">Usun</a></td>
         </tr>
     </c:forEach>
     </tbody>

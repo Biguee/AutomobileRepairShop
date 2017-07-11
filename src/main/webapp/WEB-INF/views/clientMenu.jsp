@@ -13,13 +13,13 @@
 <ul>
     <li>
         <a href="addClient.html">
-            Dodaj nowego kontrahenta
+            Dodaj nowego klienta
         </a>
     </li>
 
     <li>
         <a href="allClients.html">
-            Lista kontrahentow
+            Lista klientow
         </a>
     </li>
 </ul>

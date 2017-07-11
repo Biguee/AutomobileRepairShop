@@ -49,27 +49,20 @@ public class ClientController {
                 "allClients","clientList", clientService.findAllClients());
     }
 
-//    @RequestMapping(value = "removeClient.html")
-//    public ModelAndView removeRepair(@Valid Client client){
-//        clientService.deleteClientById(client.getID);
-//        return new ModelAndView("removeConfirmation");
-//    }
-
     @RequestMapping(value = "editClient.html", method = RequestMethod.GET)
     public ModelAndView showEditClient(@RequestParam int id){
         return new ModelAndView(
-                "editClient","client", clientService.findClientbyId(id));
+                "editClient","client", clientService.findClientById(id));
     }
 
-//    @RequestMapping(value = "editClient.html",method = RequestMethod.POST)
-//    public ModelAndView editClient(@Valid Client client, BindingResult bindingResult){
-//        if(bindingResult.hasErrors()){
-//            return new ModelAndView("editClient");
-//        }
-//        clientService.updateClient();
-//
-//        return new ModelAndView("editRepairConfirmation");
-//    }
+    @RequestMapping(value = "editClient.html",method = RequestMethod.POST)
+    public ModelAndView editClient(@Valid Client client, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return new ModelAndView("editClient");
+        }
+        clientService.updateClient(client.getClientName(), client);
+        return new ModelAndView("editClientConfirmation");
+    }
 
 
 
