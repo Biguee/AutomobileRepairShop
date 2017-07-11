@@ -27,8 +27,18 @@ public class EmployeeService {
         return employeeDao.addEmployee(employee);
     }
 
+    //read
+    public Employee findEmployeeById(Integer id){
+        return employeeDao.findEmployeeById(id);
+    }
+
     public Employee findBySurname(String surname){
         return employeeDao.findBySurname(surname);
+    }
+
+    //update
+    public void updateEmployee(String employeeName, Employee employee){
+        employeeDao.updateEmployee(employeeName, employee);
     }
 
     public List<Employee> findAllEmployee(){ return employeeDao.findAllEmployee(); }

@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import pl.com.garage.works.hard.model.Client;
 import pl.com.garage.works.hard.model.Employee;
 import pl.com.garage.works.hard.model.Repair;
 
@@ -40,9 +41,20 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
+    public Employee findEmployeeById(int id) {
+        return sessionFactory.getCurrentSession().find(Employee.class, id);
+    }
+
+    @Override
     public List<Employee> addEmployee(Employee employee) {
         employeeList.add(employee);
         return employeeList;
+    }
+
+    @Override
+    public void updateEmployee(String employeeName, Employee employee) {
+            employee.setEmployeeName(employeeName);
+            sessionFactory.getCurrentSession().update(employeeName, employee);
     }
 
     @Override

@@ -18,7 +18,7 @@
     </li>
 
     <li>
-        <a href="allEmployee.html">
+        <a href="allEmployees.html">
             Lista pracownikow
         </a>
     </li>
