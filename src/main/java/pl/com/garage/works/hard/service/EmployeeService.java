@@ -40,6 +40,9 @@ public class EmployeeService {
     public void updateEmployee(String employeeName, Employee employee){
         employeeDao.updateEmployee(employeeName, employee);
     }
+    public void deleteEmployee(Employee employee){
+        employeeDao.deleteEmployee(employee);
+    }
 
     public List<Employee> findAllEmployee(){ return employeeDao.findAllEmployee(); }
 

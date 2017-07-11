@@ -17,6 +17,7 @@ import java.util.List;
  * Created by 8760w on 2017-07-04.
  */
 @Repository
+@Transactional
 public class PartDaoImpl implements PartDao {
 
     @Autowired
@@ -34,7 +35,7 @@ public class PartDaoImpl implements PartDao {
 
     @Override
     public Part findPartById(Integer id) {
-        return sessionFactory.getCurrentSession().load(Part.class, id);
+        return sessionFactory.getCurrentSession().find(Part.class, id);
     }
 
     @Override
@@ -45,12 +46,9 @@ public class PartDaoImpl implements PartDao {
 
     @Override
     public void deletePart(Part part) {
+        part.getPartName();
         sessionFactory.getCurrentSession().delete(part);
-        //TODO
-        // sessionFactory.getCurrentSession().get(Part.class, id);
-        //        id = part.getId();
-        //        sessionFactory.getCurrentSession().load(Part.class, id);
-        //        sessionFactory.getCurrentSession().delete(part);
+
     }
 
     @Override

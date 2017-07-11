@@ -3,9 +3,7 @@ package pl.com.garage.works.hard.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.com.garage.works.hard.dao.ClientDao;
-import pl.com.garage.works.hard.dao.RepairDao;
 import pl.com.garage.works.hard.model.Client;
-import pl.com.garage.works.hard.model.Repair;
 
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class ClientService {
     }
     //read
     public Client findClientById(Integer id){
-        return clientDao.findClientbyId(id);
+        return clientDao.findClientById(id);
     }
     //update
     public void updateClient(String clientName, Client client){

@@ -4,10 +4,10 @@
 
 <html>
 <head>
-    <title>Edit repair</title>
+    <title>Edycja naprawy</title>
 </head>
 
-<body>
+
 <body>
 <h1>Edytuj naprawe</h1>
 <f:form method="post" modelAttribute="repair">
@@ -46,5 +46,5 @@
 </p>
 </body>
 
-</body>
+
 </html>

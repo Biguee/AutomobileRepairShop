@@ -14,7 +14,8 @@ CREATE TABLE parts(
   PART_NAME TEXT NOT NULL,
   PART_NUMBER TEXT NOT NULL ,
   price_wholesale FLOAT,
-  price_retail FLOAT
+  price_retail FLOAT,
+  amount INTEGER NOT NULL
 );
 
 DROP TABLE IF EXISTS repairs;
@@ -39,9 +40,6 @@ CREATE TABLE employees(
 
 DROP TABLE IF EXISTS stock;
 
-CREATE TABLE stock(
-  ID BIGSERIAL NOT NULL ,
- stock_name TEXT
-);
+
 
 

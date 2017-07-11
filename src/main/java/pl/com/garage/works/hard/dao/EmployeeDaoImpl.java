@@ -24,8 +24,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     private List<Employee> employeeList;
 
-    private Employee employee;
-
     public void setEmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
     }
@@ -43,6 +41,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public Employee findEmployeeById(int id) {
         return sessionFactory.getCurrentSession().find(Employee.class, id);
+    }
+
+    @Override
+    public void deleteEmployee(Employee employee) {
+        employee.getEmployeeName();
+        sessionFactory.getCurrentSession().delete(employee);
     }
 
     @Override

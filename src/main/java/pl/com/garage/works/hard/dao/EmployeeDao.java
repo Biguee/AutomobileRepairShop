@@ -29,6 +29,9 @@ public interface EmployeeDao {
     //read
     Employee findEmployeeById(int id);
 
+    //delete
+    void deleteEmployee(Employee employee);
+
 
     List<Employee> findAllEmployee();
 }

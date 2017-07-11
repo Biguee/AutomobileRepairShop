@@ -25,7 +25,7 @@ public class MainApp {
         EmployeeService employeeService = applicationContext.getBean(EmployeeService.class);
         OrderService orderService = applicationContext.getBean(OrderService.class);
         RepairService repairService = applicationContext.getBean(RepairService.class);
-        StockService stockService = applicationContext.getBean(StockService.class);
+//        StockService stockService = applicationContext.getBean(StockService.class);
 
         applicationContext.close();
 

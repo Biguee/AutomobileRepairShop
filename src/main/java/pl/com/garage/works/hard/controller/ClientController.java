@@ -64,6 +64,11 @@ public class ClientController {
         return new ModelAndView("/clientView/editClientConfirmation");
     }
 
+    @RequestMapping(value = "removeClient.html")
+    public ModelAndView removeRepair(@Valid Client client){
+        clientService.deleteClient(client);
+        return new ModelAndView("/clientView/removeClientConfirmation");
+    }
 
 
 

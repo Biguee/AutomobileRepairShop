@@ -1,7 +1,6 @@
 package pl.com.garage.works.hard.dao;
 
 import pl.com.garage.works.hard.model.Client;
-import pl.com.garage.works.hard.model.Repair;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ public interface ClientDao {
 
     void saveClient(Client client);
     //read
-    Client findClientbyId(int id);
+    Client findClientById(int id);
     //update
     void updateClient( String clientName, Client client);
     //delete

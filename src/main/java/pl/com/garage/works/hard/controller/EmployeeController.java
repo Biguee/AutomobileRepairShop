@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import pl.com.garage.works.hard.model.Client;
 import pl.com.garage.works.hard.model.Employee;
+import pl.com.garage.works.hard.model.Repair;
 import pl.com.garage.works.hard.service.ClientService;
 import pl.com.garage.works.hard.service.EmployeeService;
 
@@ -63,6 +64,12 @@ public class EmployeeController {
         }
         employeeService.updateEmployee(employee.getEmployeeName(), employee);
         return new ModelAndView("/employeeView/editEmployeeConfirmation");
+    }
+
+    @RequestMapping(value = "removeEmployee.html")
+    public ModelAndView removeEmployee(@Valid Employee employee){
+        employeeService.deleteEmployee(employee);
+        return new ModelAndView("/employeeView/removeEmployeeConfirmation");
     }
 
 

@@ -9,32 +9,24 @@
 
 </head>
 <body>
-<h1>HARD WORKS GARAGE</h1>
+<h1>Czesci</h1>
 <ul>
     <li>
-        <a href="showRepairMenu.html">
-            Rodzaj naprawy
+        <a href="addPart.html">
+            Dodaj czesc do listy
         </a>
     </li>
 
     <li>
-        <a href="showClientMenu.html">
-            Kontrahenci
-        </a>
-    </li>
-
-
-    <li>
-    <a href="showEmployeeMenu.html">
-        Pracownicy
-    </a>
-</li>
-
-    <li>
-        <a href="showPartMenu.html">
-            Katalog czesci
+        <a href="allParts.html">
+            Lista czesci
         </a>
     </li>
 </ul>
+<p>
+    <a href="index.html">
+        menu glowne
+    </a>
+</p>
 </body>
 </html>

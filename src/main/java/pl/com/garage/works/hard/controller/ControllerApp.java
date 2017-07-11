@@ -20,9 +20,16 @@ public class ControllerApp {
         return new ModelAndView("clientView/clientMenu");
     }
 
+
     @RequestMapping("showEmployeeMenu.html")
     public ModelAndView showEmployeeMenu(){
         return new ModelAndView("employeeView/employeeMenu");
+    }
+
+
+    @RequestMapping("showPartMenu.html")
+    public ModelAndView showPartMenu(){
+        return new ModelAndView("partView/partMenu");
     }
 
 

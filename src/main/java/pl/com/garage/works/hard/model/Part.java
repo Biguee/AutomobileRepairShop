@@ -24,14 +24,15 @@ public class Part {
     private double priceWholesale;
     @Column(name = "price_retail")
     private double priceRetail;
-    @ManyToOne
-    private Stock stock;
+    @Column(name = "amount")
+    private Integer amount;
 
-    public Part(String partName, String partNumber, double priceWholesale, double priceRetail) {
+    public Part(String partName, String partNumber, double priceWholesale, double priceRetail, Integer amount) {
         this.partName = partName;
         this.partNumber = partNumber;
         this.priceWholesale = priceWholesale;
         this.priceRetail = priceRetail;
+        this.amount = amount;
     }
 
     public Part() {
@@ -45,6 +46,7 @@ public class Part {
                 ", partNumber='" + partNumber + '\'' +
                 ", priceWholesale=" + priceWholesale +
                 ", priceRetail=" + priceRetail +
+                ", amount=" + amount +
                 '}';
     }
 
@@ -52,39 +54,47 @@ public class Part {
         return id;
     }
 
-    public String getPartName() {
-        return partName;
-    }
-
-    public String getPartNumber() {
-        return partNumber;
-    }
-
-    public double getPriceWholesale() {
-        return priceWholesale;
-    }
-
-    public double getPriceRetail() {
-        return priceRetail;
-    }
-
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getPartName() {
+        return partName;
     }
 
     public void setPartName(String partName) {
         this.partName = partName;
     }
 
+    public String getPartNumber() {
+        return partNumber;
+    }
+
     public void setPartNumber(String partNumber) {
         this.partNumber = partNumber;
+    }
+
+    public double getPriceWholesale() {
+        return priceWholesale;
     }
 
     public void setPriceWholesale(double priceWholesale) {
         this.priceWholesale = priceWholesale;
     }
 
+    public double getPriceRetail() {
+        return priceRetail;
+    }
+
     public void setPriceRetail(double priceRetail) {
         this.priceRetail = priceRetail;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 }
