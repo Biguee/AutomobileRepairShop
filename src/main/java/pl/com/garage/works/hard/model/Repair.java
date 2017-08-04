@@ -8,7 +8,7 @@ import java.util.Date;
 import static javax.persistence.GenerationType.IDENTITY;
 
 /**
- * Created by 8760w on 2017-07-04.
+ * @author Justyna Salacinska
  */
 @Entity
 @Table(name = "repairs")
@@ -16,7 +16,7 @@ public class Repair {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
+    @Column(name = "id")
     private Integer id;
     @Column(name = "repair_name")
     private String repairName;

@@ -23,7 +23,7 @@ public class MainApp {
 
         ClientService clientService = applicationContext.getBean(ClientService.class);
         EmployeeService employeeService = applicationContext.getBean(EmployeeService.class);
-        OrderService orderService = applicationContext.getBean(OrderService.class);
+//        OrderService orderService = applicationContext.getBean(OrderService.class);
         RepairService repairService = applicationContext.getBean(RepairService.class);
 //        StockService stockService = applicationContext.getBean(StockService.class);
 

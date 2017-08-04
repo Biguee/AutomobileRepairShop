@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Hard Works Garage</title>
+    <link href="<c:url value="/resources/main.css?version=6" />" rel="stylesheet">
 </head>
 
 <body>
@@ -26,14 +27,9 @@
         <f:errors path="priceWholesale"/>
     </p>
 
-    <div>Cena detaliczna brutto: </div>
-    <f:input path="priceRetail"/>
-    <p>
-        <f:errors path="priceRetail"/>
-    </p>
 
     <div>Ilosc: </div>
-    <f:input path="amount"/>
+    <f:input type = "number" path="amount"/>
     <p>
         <f:errors path="amount"/>
     </p>

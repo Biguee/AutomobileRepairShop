@@ -28,8 +28,8 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00, 1);
-    Part part2 = new Part("toyota celica uszczelniacz wału korbowego", "586668EL", 29.57, 12.00, 1);
+    Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87,  1);
+    Part part2 = new Part("toyota celica uszczelniacz wału korbowego", "586668EL", 29.57,  1);
 
     @Before
     public void before(){
@@ -42,7 +42,7 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
         //given
 
         //when
-        partDao.savePart(new Part("toyota celica zestaw sprzęgła", "3000771001SAC", 437.95, 215.00, 1));
+        partDao.savePart(new Part("toyota celica zestaw sprzęgła", "3000771001SAC", 437.95, 1));
         //then
         int countParts = jdbcTemplate.queryForObject("select count(*) from parts where part_number=?", Integer.class, "3000771001SAC");
 
@@ -52,7 +52,7 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void shouldfindPartById() throws Exception {
         //given
-        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00, 1);
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 1);
         partDao.savePart(part1);
         Integer id = jdbcTemplate.queryForObject("Select max(id) from parts", Integer.class);
         //when
@@ -64,7 +64,7 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void SouldUpdatePart() throws Exception {
         //given
-        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00, 1);
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87,  1);
         partDao.savePart(part1);
         String no = "pp989";
         //when
@@ -77,7 +77,7 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void shouldDeletePart() throws Exception {
         //given
-        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00, 1);
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87,  1);
         partDao.savePart(part1);
 
         //when
@@ -89,9 +89,9 @@ public class PartDaoImplTest extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void findAllParts() throws Exception {
         //given
-        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00, 1);
+        Part part1 = new Part("toyota celica filtr oleju", "OP621", 23.87,  1);
         partDao.savePart(part1);
-        Part part2 = new Part("toyota celica filtr oleju", "OP621", 23.87, 10.00, 1);
+        Part part2 = new Part("toyota celica filtr oleju", "OP621", 23.87,  1);
         partDao.savePart(part2);
         List<Part> lista = Arrays.asList(part1, part2);
 

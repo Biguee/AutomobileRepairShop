@@ -4,15 +4,16 @@
 <html>
 <head>
     <title>Naprawa zostala zmieniona</title>
+    <link href="<c:url value="/resources/main.css?version=6" />" rel="stylesheet">
 </head>
 
 <body>
 <h2>OK!</h2>
 
 <p>
-    Title: ${repair.repairName}
-    Cost: ${repair.repairCost}
-    Time: ${repair.repairTime}
+    Nazwa naprawy: ${repair.repairName}
+    Koszt: ${repair.repairCost}
+    Orientacyjny czas naprawy: ${repair.repairTime} h
 
 </p>
 

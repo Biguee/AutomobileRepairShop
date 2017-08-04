@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Created by 8760w on 2017-07-09.
+ * @author Justyna Salacinska
  */
 @Controller
 public class ControllerApp {
@@ -32,6 +32,10 @@ public class ControllerApp {
         return new ModelAndView("partView/partMenu");
     }
 
+    @RequestMapping("showOrderMenu.html")
+    public ModelAndView showOrderMenu(){
+        return new ModelAndView("orderView/orderMenu");
+    }
 
 
 

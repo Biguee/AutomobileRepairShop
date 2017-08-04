@@ -3,6 +3,7 @@ package pl.com.garage.works.hard.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,7 @@ import pl.com.garage.works.hard.service.ClientService;
 import pl.com.garage.works.hard.service.RepairService;
 
 import javax.validation.Valid;
+import java.util.Map;
 
 /**
  * Created by 8760w on 2017-07-10.
@@ -26,6 +28,22 @@ public class ClientController {
     public ClientController(ClientService clientService) {
         this.clientService = clientService;
     }
+
+
+//    @RequestMapping("processCountry")
+//    public String processForm(@Valid Client client, BindingResult result)
+//    {
+//        if(result.hasErrors())
+//        {
+//            System.out.println("Validation Failed");
+//            return "orderView/orderMenu";
+//        }
+//        else
+//        {
+//            System.out.println("Validated Successfully");
+//            return "orderView/orderMenuConfirmation";
+//        }
+//    }
 
 
 

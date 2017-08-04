@@ -4,41 +4,31 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="<c:url value="/resources/main.css?version=6" />" rel="stylesheet">
 </head>
 
 <body>
 <h1>Dodaj nowa naprawe</h1>
 <f:form method="post" modelAttribute="repair">
     <p>
-        Nazwa: <f:input path="partName"/>
+        Nazwa: <f:input path="repairName"/>
     <p>
-        <f:errors path="partName"/>
-    </p>
-    </p>
-    <p>
-        Numer katalogowy czesci:<f:input path="partNumber"/>
-    <p>
-        <f:errors path="partNumber"/>
+        <f:errors path="repairName"/>
     </p>
     </p>
     <p>
-        Cena hurtowa:<f:input path="priceWholesale"/>
+        Koszt naprawy:<f:input path="repairCost"/>
     <p>
-        <f:errors path="priceWholesale"/>
-    </p>
-    </p>
-    <p>
-        Cena detaliczna:<f:input path="priceRetail"/>
-    <p>
-        <f:errors path="priceRetail"/>
+        <f:errors path="repairCost"/>
     </p>
     </p>
     <p>
-        Ilosc:<f:input path="amount"/>
+        Orientacyjny czas naprawy (w godzinach):<f:input path="repairTime"/>
     <p>
-        <f:errors path="amount"/>
+        <f:errors path="repairTime"/>
     </p>
     </p>
+
     <button type="submit">Dodaj</button>
 
 </f:form>

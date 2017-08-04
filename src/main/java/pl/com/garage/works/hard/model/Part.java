@@ -5,7 +5,7 @@ import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 
 /**
- * Created by 8760w on 2017-07-04.
+ * @author Justyna Salacinska
  */
 @Entity
 @Table(name = "parts")
@@ -22,16 +22,15 @@ public class Part {
     private String partNumber;
     @Column(name = "price_wholesale")
     private double priceWholesale;
-    @Column(name = "price_retail")
-    private double priceRetail;
+//    @Column(name = "price_retail")
+//    private double priceRetail;
     @Column(name = "amount")
     private Integer amount;
 
-    public Part(String partName, String partNumber, double priceWholesale, double priceRetail, Integer amount) {
+    public Part(String partName, String partNumber, double priceWholesale, Integer amount) {
         this.partName = partName;
         this.partNumber = partNumber;
         this.priceWholesale = priceWholesale;
-        this.priceRetail = priceRetail;
         this.amount = amount;
     }
 
@@ -45,7 +44,7 @@ public class Part {
                 ", partName='" + partName + '\'' +
                 ", partNumber='" + partNumber + '\'' +
                 ", priceWholesale=" + priceWholesale +
-                ", priceRetail=" + priceRetail +
+                ", priceRetail=" + getPriceRetail() +
                 ", amount=" + amount +
                 '}';
     }
@@ -83,11 +82,7 @@ public class Part {
     }
 
     public double getPriceRetail() {
-        return priceRetail;
-    }
-
-    public void setPriceRetail(double priceRetail) {
-        this.priceRetail = priceRetail;
+        return priceWholesale*1.3;
     }
 
     public Integer getAmount() {

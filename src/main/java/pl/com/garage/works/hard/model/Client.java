@@ -5,7 +5,7 @@ import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 
 /**
- * Created by 8760w on 2017-07-04.
+ * @author Justyna Salacinska
  */
 @Entity
 @Table(name = "clients")
