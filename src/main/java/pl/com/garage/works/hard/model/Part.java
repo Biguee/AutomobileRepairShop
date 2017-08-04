@@ -1,57 +1,95 @@
 package pl.com.garage.works.hard.model;
 
-import java.util.List;
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 /**
- * Created by 8760w on 2017-07-04.
+ * @author Justyna Salacinska
  */
+@Entity
+@Table(name = "parts")
 public class Part {
 
-    private String partName;
-    private List<Integer> partNumbers;
-    private double priceWholesale;
-    private double priceRetail;
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    private Integer id;
 
-    public Part(String partName, List<Integer> partNumbers, double priceWholesale, double priceRetail) {
+    @Column(name = "part_name")
+    private String partName;
+    @Column(name = "part_number")
+    private String partNumber;
+    @Column(name = "price_wholesale")
+    private double priceWholesale;
+//    @Column(name = "price_retail")
+//    private double priceRetail;
+    @Column(name = "amount")
+    private Integer amount;
+
+    public Part(String partName, String partNumber, double priceWholesale, Integer amount) {
         this.partName = partName;
-        this.partNumbers = partNumbers;
+        this.partNumber = partNumber;
         this.priceWholesale = priceWholesale;
-        this.priceRetail = priceRetail;
+        this.amount = amount;
+    }
+
+    public Part() {
     }
 
     @Override
     public String toString() {
         return "Part{" +
-                "partName='" + partName + '\'' +
-                ", partNumbers=" + partNumbers +
+                "id=" + id +
+                ", partName='" + partName + '\'' +
+                ", partNumber='" + partNumber + '\'' +
                 ", priceWholesale=" + priceWholesale +
-                ", priceRetail=" + priceRetail +
+                ", priceRetail=" + getPriceRetail() +
+                ", amount=" + amount +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Part part = (Part) o;
-
-        if (Double.compare(part.priceWholesale, priceWholesale) != 0) return false;
-        if (Double.compare(part.priceRetail, priceRetail) != 0) return false;
-        if (partName != null ? !partName.equals(part.partName) : part.partName != null) return false;
-        return partNumbers != null ? partNumbers.equals(part.partNumbers) : part.partNumbers == null;
+    public Integer getId() {
+        return id;
     }
 
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = partName != null ? partName.hashCode() : 0;
-        result = 31 * result + (partNumbers != null ? partNumbers.hashCode() : 0);
-        temp = Double.doubleToLongBits(priceWholesale);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(priceRetail);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        return result;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getPartName() {
+        return partName;
+    }
+
+    public void setPartName(String partName) {
+        this.partName = partName;
+    }
+
+    public String getPartNumber() {
+        return partNumber;
+    }
+
+    public void setPartNumber(String partNumber) {
+        this.partNumber = partNumber;
+    }
+
+    public double getPriceWholesale() {
+        return priceWholesale;
+    }
+
+    public void setPriceWholesale(double priceWholesale) {
+        this.priceWholesale = priceWholesale;
+    }
+
+    public double getPriceRetail() {
+        return priceWholesale*1.3;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 }

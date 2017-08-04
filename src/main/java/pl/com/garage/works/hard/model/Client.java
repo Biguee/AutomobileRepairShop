@@ -1,18 +1,35 @@
 package pl.com.garage.works.hard.model;
 
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.IDENTITY;
+
 /**
- * Created by 8760w on 2017-07-04.
+ * @author Justyna Salacinska
  */
+@Entity
+@Table(name = "clients")
 public class Client {
 
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    private int id;
+    @Column(name = "name")
     private String clientName;
+    @Column(name = "surname")
     private String clientSurname;
+    @Column(name = "nip")
     private String clientNIP;
 
-    public Client(String clientName, String clientSurname, String clientNIP) {
+    public Client(int id, String clientName, String clientSurname, String clientNIP) {
+        this.id = id;
         this.clientName = clientName;
         this.clientSurname = clientSurname;
         this.clientNIP = clientNIP;
+    }
+
+    public Client() {
     }
 
     @Override
@@ -43,5 +60,37 @@ public class Client {
         result = 31 * result + (clientSurname != null ? clientSurname.hashCode() : 0);
         result = 31 * result + (clientNIP != null ? clientNIP.hashCode() : 0);
         return result;
+    }
+
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    public String getClientSurname() {
+        return clientSurname;
+    }
+
+    public void setClientSurname(String clientSurname) {
+        this.clientSurname = clientSurname;
+    }
+
+    public String getClientNIP() {
+        return clientNIP;
+    }
+
+    public void setClientNIP(String clientNIP) {
+        this.clientNIP = clientNIP;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

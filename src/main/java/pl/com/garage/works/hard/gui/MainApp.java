@@ -18,39 +18,18 @@ public class MainApp {
 
     public static void main(String[] args) {
 
-        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
 
 
         ClientService clientService = applicationContext.getBean(ClientService.class);
         EmployeeService employeeService = applicationContext.getBean(EmployeeService.class);
-        OrderService orderService = applicationContext.getBean(OrderService.class);
+//        OrderService orderService = applicationContext.getBean(OrderService.class);
         RepairService repairService = applicationContext.getBean(RepairService.class);
-        StockService stockService = applicationContext.getBean(StockService.class);
+//        StockService stockService = applicationContext.getBean(StockService.class);
 
         applicationContext.close();
 
 
-
-
-
-
-
-//        //ProductService productService = new ProductService();
-//        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-//        //AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(Spring.class);
-//
-//        //ProductService productService = (ProductService) applicationContext.getBean("productService");
-//        //po nazwie:
-//        ApplicationService applicationService = applicationContext.getBean(ApplicationService.class);
-//        ApplicationService applicationService2 = applicationContext.getBean(ApplicationService.class);
-//        ApplicationService applicationService3 = applicationContext.getBean(ApplicationService.class);
-//
-//        applicationService.doShopping();
-//
-//        applicationContext.close();
-//
-//
-//
     }
 
 
